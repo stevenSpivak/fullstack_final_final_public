@@ -1,0 +1,44 @@
+node_modules/
+.npm
+.pnpm-store/
+
+# ═══ Build outputs ═══
+dist/
+build/
+.next/
+out/
+.nuxt/
+
+# ═══ Environment — הכי חשוב! ═══
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# ═══ Logs ═══
+*.log
+npm-debug.log*
+yarn-debug.log*
+logs/
+
+# ═══ OS ═══
+.DS_Store
+.DS_Store?
+Thumbs.db
+desktop.ini
+
+# ═══ IDE ═══
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+
+# ═══ Testing ═══
+coverage/
+.nyc_output/
+
+# ═══ Docker ═══
+.docker/
