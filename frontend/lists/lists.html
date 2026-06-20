@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Bird Lists</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+
+        <nav>
+            <h1>BirdSpotter</h1>
+
+            <ul>
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="lists.html">My Birds</a></li>
+            </ul>
+        </nav>
+
+        <main class="lists-page">
+
+            <section class="list-card">
+
+                <h2>Birds I've Seen</h2>
+
+                <div class="add-section">
+                    <input type="text" id="seenInput" placeholder="Bird name">
+                    <button id="addSeenBtn">Add</button>
+                </div>
+
+                <ul id="seenList"></ul>
+
+            </section>
+
+            <section class="list-card">
+
+                <h2>Birds I Want To See</h2>
+
+                <div class="add-section">
+                    <input type="text" id="wishInput" placeholder="Bird name">
+                    <button id="addWishBtn">Add</button>
+                </div>
+
+                <ul id="wishList"></ul>
+
+            </section>
+
+        </main>
+        <script src="lists.js"></script>
+    </body>
+</html>

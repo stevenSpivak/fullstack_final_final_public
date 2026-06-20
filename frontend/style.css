@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef5f0;
+    color: #222;
+}
+
+/* NAVBAR */
+
+nav {
+    background: #2e7d32;
+    color: white;
+    padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+
+    background-image: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),
+    url("https://images.unsplash.com/photo-1444464666168-49d633b86797");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* MAIN */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+/* LIST PAGE */
+
+.lists-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap: 30px;
+}
+
+.list-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.list-card h2 {
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+.add-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-section input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.add-section button {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-section button:hover {
+    background: #1b5e20;
+}
+
+.list-card ul {
+    list-style: none;
+}
+
+.list-card li {
+    padding: 12px;
+    margin-bottom: 10px;
+
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2e7d32;
+    color: white;
+}
+.list-card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px;
+    margin-bottom: 10px;
+
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.list-card li button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
