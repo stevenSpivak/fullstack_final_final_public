@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BirdSpotter</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BirdSpotter</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
 
-    <nav>
-        <h1>BirdSpotter</h1>
+        <nav>
+            <h1>BirdSpotter</h1>
 
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="../lists/lists.html">My Birds</a></li>
-        </ul>
-    </nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="../lists/lists.html">My Birds</a></li>
+            </ul>
+        </nav>
 
-    <header class="hero">
-        <h2>Discover Birds Around You</h2>
-        <p>Learn birdwatching, find birding sites, and keep track of your sightings.</p>
-    </header>
+        <header class="hero">
+            <h2>Discover Birds Around You</h2>
+            <p>Learn birdwatching, find birding sites, and keep track of your sightings.</p>
+        </header>
 
-    <main>
+        <main>
+                <section class="card">
 
-        <section class="card">
-            <h2>Birdwatching Tips</h2>
+                <h2>Choose Country</h2>
 
-            <div id="birdTips">
-                <p>Loading tips...</p>
-            </div>
-        </section>
+                <select id="countrySelect">
 
-        <section class="card">
-            <h2>Binocular Recommendations</h2>
+                    <option value="IL">
+                        Israel
+                    </option>
 
-            <div id="binocularTips">
-                <p>Loading recommendations...</p>
-            </div>
-        </section>
+                    <option value="US">
+                        United States
+                    </option>
 
-        <section class="card">
-            <h2>Top Birding Locations</h2>
+                    <option value="GB">
+                        United Kingdom
+                    </option>
 
-            <div id="birdSites">
-                <p>Loading locations...</p>
-            </div>
-        </section>
+                    <option value="CA">
+                        Canada
+                    </option>
 
-    </main>
+                    <option value="AU">
+                        Australia
+                    </option>
 
-    <footer>
-        <p>BirdSpotter © 2026</p>
-    </footer>
+                </select>
 
-</body>
+                <button id="loadBtn">
+                    Get Recommendations
+                </button>
+
+            </section>
+            <section class="card">
+                <h2>Birdwatching Tips</h2>
+
+                <div id="birdTips">
+                    <p>Loading tips...</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Binocular Recommendations</h2>
+
+                <div id="binocularTips">
+                    <p>Loading recommendations...</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Top Birding Locations</h2>
+
+                <div id="birdSites">
+                    <p>Loading locations...</p>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer>
+            <p>BirdSpotter © 2026</p>
+        </footer>
+        <script src="home.js"></script>
+    </body>
 </html>
