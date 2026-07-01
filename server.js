@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
+const auth = require("./middleware/auth");
 
 const app = express();
 
@@ -23,6 +24,7 @@ mongoose.connect(
 });
 
 const UserSchema = new mongoose.Schema({
+
     username: {
         type: String,
         required: true
@@ -37,7 +39,18 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+
+    seenBirds: {
+        type: [String],
+        default: []
+    },
+
+    wishlistBirds: {
+        type: [String],
+        default: []
     }
+
 });
 
 const User = mongoose.model("User", UserSchema);
@@ -150,6 +163,82 @@ app.post("/login", async (req, res) => {
 
 });
 
+app.post("/birds/add", auth, async (req, res) => {
+
+    try {
+
+        const { bird, list } = req.body;
+
+        const user = await User.findById(req.userId);
+
+        if (list === "seen") {
+
+            if (!user.seenBirds.includes(bird))
+                user.seenBirds.push(bird);
+
+        }
+        else {
+
+            if (!user.wishlistBirds.includes(bird))
+                user.wishlistBirds.push(bird);
+
+        }
+
+        await user.save();
+
+        res.json({
+            success: true
+        });
+
+    }
+    catch {
+
+        res.status(500).json({
+            message: "Server error"
+        });
+
+    }
+
+});
+
+app.post("/birds/remove", auth, async (req, res) => {
+
+    try {
+
+        const { bird, list } = req.body;
+
+        const user = await User.findById(req.userId);
+
+        if (list === "seen") {
+
+            user.seenBirds =
+                user.seenBirds.filter(b => b !== bird);
+
+        }
+        else {
+
+            user.wishlistBirds =
+                user.wishlistBirds.filter(b => b !== bird);
+
+        }
+
+        await user.save();
+
+        res.json({
+            success: true
+        });
+
+    }
+    catch {
+
+        res.status(500).json({
+            message: "Server error"
+        });
+
+    }
+
+});
+
 app.get("/", (req, res) => {
     res.send("BirdSpotter API is running");
 });
@@ -253,6 +342,27 @@ app.get("/api/home-content", async (req, res) => {
         res.status(500).json({
             message:
                 "Could not get bird data."
+        });
+
+    }
+
+});
+app.get("/birds", auth, async (req, res) => {
+
+    try {
+
+        const user = await User.findById(req.userId);
+
+        res.json({
+            seenBirds: user.seenBirds,
+            wishlistBirds: user.wishlistBirds
+        });
+
+    }
+    catch {
+
+        res.status(500).json({
+            message: "Server error"
         });
 
     }
